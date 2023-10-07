@@ -1,15 +1,9 @@
-plugins {
-    id 'java'
-}
-
-group = 'com.yicj.study'
-version = '1.0-SNAPSHOT'
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation("org.springframework.boot:spring-boot-autoconfigure")
+    implementation("org.springframework.cloud:spring-cloud-stream")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-    useJUnitPlatform()
 }
