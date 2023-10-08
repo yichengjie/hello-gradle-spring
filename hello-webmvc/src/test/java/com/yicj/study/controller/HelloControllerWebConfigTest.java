@@ -1,10 +1,13 @@
 package com.yicj.study.controller;
 
+import com.yicj.study.config.WebMvcConfig;
+import com.yicj.study.service.HelloService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -14,21 +17,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
-class HelloControllerTest {
-
-    @Autowired
-    private WebApplicationContext context ;
-
-
+/**
+ * @author yicj
+ * @date 2023年10月08日 15:02
+ */
+@SpringJUnitWebConfig(classes = WebMvcConfig.class)
+class HelloControllerWebConfigTest {
+    MockMvc mockMvc;
+    @BeforeEach
+    void setup(WebApplicationContext wac) {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    }
     @Test
     void index() throws Exception {
-        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(new HelloController())
-                .defaultRequest(MockMvcRequestBuilders.get("/hello/index").accept(MediaType.APPLICATION_JSON))
-                .alwaysExpect(status().isOk())
-                .alwaysExpect(content().contentType("application/json"))
-                .build();
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/hello/index")
+        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("http://localhost:8081/hello/index")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
         mockMvc.perform(requestBuilder)
@@ -36,11 +38,4 @@ class HelloControllerTest {
                 .andExpect(content().contentType("application/json"))
                 .andDo(print()) ;
     }
-
-
-    @Test
-    public void index2(){
-
-    }
-
 }
