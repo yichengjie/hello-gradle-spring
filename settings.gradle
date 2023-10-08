@@ -1,3 +1,4 @@
 rootProject.name = 'hello-gradle-spring'
 include 'hello-webmvc'
+include 'hello-commons'
 

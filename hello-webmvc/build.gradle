@@ -2,12 +2,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-//    implementation("org.springframework.boot:spring-boot-autoconfigure")
-//    implementation("org.springframework.cloud:spring-cloud-stream")
+    implementation(project(':hello-commons'))
+    api("org.springframework.boot:spring-boot-starter-data-redis")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-test-autoconfigure'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test'
+
+
 }

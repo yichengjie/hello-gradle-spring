@@ -7,9 +7,11 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../install/gradle/gradle-8.0" />
+        <option name="gradleJvm" value="17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/hello-commons" />
             <option value="$PROJECT_DIR$/hello-webmvc" />
           </set>
         </option>
