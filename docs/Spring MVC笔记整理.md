@@ -1,0 +1,1 @@
+1. 在SpringBoot项目中不能手动导入@EnableWebMvc注解，否则WebMvcAutoConfiguration中的类将不满足生效条件

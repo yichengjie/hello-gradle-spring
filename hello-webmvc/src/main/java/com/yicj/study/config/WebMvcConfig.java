@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @date 2023年10月08日 15:06
  */
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan(basePackages = "com.yicj.study.controller")
 public class WebMvcConfig {
     @Bean
