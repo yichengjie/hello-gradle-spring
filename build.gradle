@@ -82,6 +82,7 @@ subprojects {
         testAnnotationProcessor 'org.projectlombok:lombok'//仅测试时使用注释处理器，不参与打包
         //jackson
         compileOnly("com.fasterxml.jackson.core:jackson-annotations")
+        implementation 'org.slf4j:slf4j-api'
     }
 
     dependencyManagement {

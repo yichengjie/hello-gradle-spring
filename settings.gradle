@@ -20,7 +20,7 @@ String rootDirPath = rootDir.absolutePath + File.separator
 buildFiles.each { File buildFile ->
     boolean isDefaultName = 'build.gradle'.contentEquals(buildFile.name)
     boolean isKotlin = buildFile.name.endsWith(".kts")
-    println('----> buildFile.name : ' + buildFile.name + ", isDefaultName: " + isDefaultName)
+    // println('----> buildFile.name : ' + buildFile.name + ", isDefaultName: " + isDefaultName)
     if(isDefaultName) {
         String buildFilePath = buildFile.parentFile.absolutePath
         String projectPath = buildFilePath.replace(rootDirPath, '').replace(File.separator, '-')

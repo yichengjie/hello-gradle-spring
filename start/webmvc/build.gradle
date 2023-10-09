@@ -3,10 +3,10 @@ dependencies {
 //    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
 //    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure'
     implementation(project(':hello-cores-commons'))
+    implementation(project(":hello-cores-utils"))
 //    api("org.springframework.boot:spring-boot-starter-data-redis")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-test-autoconfigure'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test'
-
 
 }
