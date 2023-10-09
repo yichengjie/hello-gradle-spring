@@ -1,6 +1,11 @@
 ### idea中build时候中文乱码报错
 1. Help -> Edit Custom VM Options 
 2. 文件末尾追加：-Dfile.encoding=UTF-8
+### 其他配置
+1. 修改gradle/wrapper/gradle-wrapper.properties中的distributionUrl为本地zip文件
+   ```properties
+   distributionUrl=file:///D:/tools/gradle/gradle-7.4.2-bin.zip
+   ```
 ### lombok引入依赖
 1. gradle 引入依赖
     ```groovy

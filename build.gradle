@@ -14,6 +14,22 @@ configurations {
     }
 }
 
+// 注释, 默认打开单元测试
+//test {
+//    println("------------")
+//    enabled(false)
+//}
+// 遍历所有任务, 如果存在build任务, 则关闭单元测试
+//gradle.taskGraph.whenReady { graph ->
+//    graph.getAllTasks().each { task ->
+//        def subRunTask = (task.path =~ /:.+:build/)
+//        if (subRunTask) {
+//            // println "TRACER skipping ${task.path} "
+//            test.enabled = false
+//        }
+//    }
+//}
+
 ext {
     //spring 框架版本号
     springBootVersion = '3.1.3'
@@ -105,11 +121,9 @@ subprojects {
 
         }
     }
-
     test {
         useJUnitPlatform()
     }
 }
-
 
 
