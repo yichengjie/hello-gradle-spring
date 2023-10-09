@@ -1,0 +1,7 @@
+group = 'com.yicj.study'
+version = '1.0-SNAPSHOT'
+
+dependencies {
+//    compileOnly 'org.projectlombok:lombok'//仅编译时使用，不参与打包
+//    annotationProcessor 'org.projectlombok:lombok'//注释处理器，如使用@Slf4j注解时
+}
